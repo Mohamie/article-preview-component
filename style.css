@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --primary-bg-color: hsl(212, 23%, 69%);
+    --text-light-color: hsl(0, 0%, 100%);
+    --text-dark-color: hsl(217, 19%, 35%);
+    --text-secondary-color:  hsl(210, 46%, 95%);
+    --socials-bg-color:  hsl(216, 50%, 16%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+body{
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-dark-color);
+    background-color: var(--primary-bg-color);
+}
+
+@media (min-width: 769px){
+    body{
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+    }
+}
+
+h1, h2, p{
+    margin: 0;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 1.8rem;
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+
+@media(min-width: 769px){
+    h1{
+        font-size: 2.5rem;
+    }
+    
+    h2{
+        font-size: 2rem;
+    }
+    
+    p{
+        font-size: 1.8rem;
+    }   
+}
+
+.card{
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    box-shadow: 0px 10px 30px 5px var(--primary-bg-color);
+}
+
+@media (min-width: 769px){
+    .card{
+        height: 40rem;
+        max-width: 95rem;
+        flex-direction: row;
+    }
+}
+
+.card__image{
+    border-radius: 1.5rem 1.5rem 0 0;
+    width: 100%;
+}
+
+@media(min-width: 769px){
+    .card__image{
+        height: 100%;
+        width: unset;
+        border-radius: 1.5rem 0 0 1.5rem;
+    }
+}
+
+.card__content_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2.5rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    background-color: var(--text-light-color);
+
+}
+
+.card__content_wrapper.share__active{
+    padding-bottom: 0;
+}
+
+.card__image_container{
+    height: 25rem;
+}
+
+
+@media(min-width: 769px){
+    .card__image_container{
+        height: 100%;
+        width: 40%;
+    }
+    
+    .card__content_wrapper{
+        height: 100%;
+        padding: 5rem 4rem;
+        width: 60%;
+        border-radius: 0 1.5rem 1.5rem 0;
+
+    }
+}
+
+.card__description{
+    /* font-size: 1.8rem; */
+    padding-bottom: 1.5rem;
+}
+
+.card__author_section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card__author_section .content{
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    margin: 0 auto 0 1.5rem;
+}
+
+.card__author_section .author__name{
+    white-space: nowrap;
+}
+
+.card__author_section .author__avatar{
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.share__icon{
+    cursor: pointer;
+    z-index: 1;
+}
+
+.share__socials {
+    opacity: 0;
+    height: 6rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--socials-bg-color);
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 769px){
+    .share__socials{
+        width: 30rem;
+        right: -5rem;
+        left: unset;
+        bottom: 12rem;
+        border-radius: 1.5rem;
+    }
+}
+
+.share__socials.active{
+    opacity: 1;
+    transition: opacity .2s ease-in;
+}
+
+@media (min-width: 769px) {
+    .share__socials.active:before{
+        content: "";
+        position: relative;
+    }
+    
+    .share__socials.active:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 55%;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-top-color: var(--socials-bg-color);
+        border-bottom: 0;
+        margin-bottom: -14px;
+    }
+}
+
+.share__socials img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.share__socials p{
+   letter-spacing: .5rem;
+   color: var(--text-light-color);
+   font-weight: 700;
+}
+
+
+footer{
+    margin-top: 10rem;
+}
+
+footer a{
+    color: var(--text-secondary-color);
+}
