@@ -26,7 +26,7 @@ body{
     font-family: 'Manrope', sans-serif;
     font-size: 1.3rem;
     color: var(--text-dark-color);
-    background-color: var(--primary-bg-color);
+    background-color: var(--text-secondary-color);
 }
 
 @media (min-width: 769px){
@@ -229,9 +229,10 @@ p{
 
 
 footer{
+    color: var(--primary-bg-color);
     margin-top: 10rem;
 }
 
 footer a{
-    color: var(--text-secondary-color);
+    color: var(--text-dark-color);
 }
